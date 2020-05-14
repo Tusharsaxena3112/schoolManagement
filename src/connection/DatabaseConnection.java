@@ -13,7 +13,7 @@ public class DatabaseConnection {
 
     public boolean attemptConnection() throws SQLException {
         boolean isConnected = false;
-        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/school?useLegacyDatetimeCode=false&serverTimezone=UTC","user","");
+        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/school?useLegacyDatetimeCode=false&serverTimezone=UTC","root","");
         if(connection!=null){
             isConnected = true;
         }
