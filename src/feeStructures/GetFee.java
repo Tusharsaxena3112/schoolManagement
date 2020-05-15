@@ -1,5 +1,16 @@
 package feeStructures;
 
-public class GetFee {
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
+public class GetFee {
+    public void getFee(Connection connection) throws SQLException {
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery("SELECT * FROM feeStructure");
+        while(resultSet.next()){
+            System.out.println(resultSet.getString("rollNumber"));
+        }
+    }
 }
