@@ -1,5 +1,6 @@
 package connection;
 
+import feeStructures.GetFee;
 import students.GetStudents;
 
 import java.sql.SQLException;
@@ -12,5 +13,8 @@ public class Main {
         }
         GetStudents students = new GetStudents();
         students.getStudents(databaseConnection.getConnection());
+
+        GetFee getFee = new GetFee();
+        getFee.getFee(databaseConnection.getConnection());
     }
 }
