@@ -1,9 +1,8 @@
 package result;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+import com.mysql.cj.protocol.Resultset;
+
+import java.sql.*;
 import java.util.Scanner;
 
 public class Results {
@@ -21,7 +20,9 @@ public class Results {
 
     public void getRankings(Connection connection) throws SQLException {
         Statement statement  = connection.createStatement();
-        statement.executeQuery("SELECT * FROM result ORDER BY percent DESC");
-
+        ResultSet resultSet = statement.executeQuery("SELECT * FROM result ORDER BY percent DESC");
+        while(resultSet.next()){
+            System.out.println(resultSet.getString("percent")+"     "+resultSet.getString("name"));
+        }
     }
 }

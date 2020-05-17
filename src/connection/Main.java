@@ -28,6 +28,8 @@ public class Main {
 //        GetTeacher getTeacher = new GetTeacher();
 //        getTeacher.getTeachers(databaseConnection.getConnection());
         Results results = new Results();
-        results.enterResult(databaseConnection.getConnection());
+        //results.enterResult(databaseConnection.getConnection());
+
+        results.getRankings(databaseConnection.getConnection());
     }
 }
